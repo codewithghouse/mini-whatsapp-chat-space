@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/searchResults.css" />
+</head>
+<body>
+  <h2>Search results for "<%= searchUser %>"</h2>
+  <a href="/chats">⬅ Back to All Chats</a>
+  <div class="chat-container">
+    <% if (results.length === 0) { %>
+      <p>No chats found for this user.</p>
+    <% } %>
+    <% for (let chat of results) { %>
+      <div class="chat">
+        <div><%= chat.from %> → <%= chat.to %></div>
+        <div class="message"><%= chat.message %></div>
+        <div class="time"><%= chat.created_at.toString().split("").slice(0,21).join("") %></div>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anonymous Chat</title>
+  <link rel="stylesheet" href="/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>Mini WhatsApp By Codewithghouse 💬</header>
+
+  <div class="top-controls">
+    <form action="/chats/search" method="GET" class="search-form">
+      <input type="text" name="from" placeholder="Search by user name..." required />
+      <button type="submit">Search</button>
+    </form>
+
+    <button class="add-chat-btn"><a href="/chats/new">➕ Add New Chat</a></button>
+  </div>
+
+  <div class="chat-container">
+    <% for (let chat of allchats) { %>
+      <div class="chat">
+        <div class="chat-header">
+          <span class="from"><%= chat.from %></span> → 
+          <span class="to"><%= chat.to %></span>
+        </div>
+        <div class="message"><%= chat.message %></div>
+        <div class="time">
+          Created: <%= chat.created_at.toString().split("").slice(0,21).join("") %>
+          <% if (chat.updated_at) { %>
+            <br>Updated: <%= chat.updated_at.toString().split("").slice(0,21).join("") %>
+          <% } %>
+        </div>
+        <div class="chat-actions">
+          <a href="/chats/<%= chat._id %>/edit" class="edit-btn">✏️ Edit</a>
+          <a href="/chats/<%= chat._id %>/delete" class="delete-btn">🗑️ Delete</a>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

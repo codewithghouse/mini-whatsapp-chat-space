@@ -1,0 +1,95 @@
+/* Add this in index.css file */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #128C7E;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-form input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    width: 250px;
+  }
+  
+  .search-form button {
+    padding: 8px 14px;
+    border: none;
+    background-color: #25D366;
+    color: white;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .search-form button:hover {
+    background-color: #1ebe5d;
+  }
+  
+  .add-chat-btn a {
+    background-color: #34B7F1;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .add-chat-btn a:hover {
+    background-color: #289fd8;
+  }
+  
+  /* Chat container styles below (optional touchup) */
+  .chat-container {
+    padding: 1rem 2rem;
+  }
+  
+  .chat {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  
+  .chat-header {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .chat-actions a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .chat-actions a:hover {
+    text-decoration: underline;
+  }
+  

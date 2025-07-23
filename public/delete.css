@@ -1,0 +1,54 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #444;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #25D366;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Elements */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"],
+  textarea {
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button {
+    background-color: #25D366;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Chat</title>
+  <link rel="stylesheet" href="/delete.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Delete Chat</h1>
+
+    <p><strong>From:</strong> <%= chat.from %></p>
+    <p><strong>To:</strong> <%= chat.to %></p>
+    <p><strong>Message:</strong> <%= chat.message %></p>
+
+    <form action="/chats/<%= chat._id %>?_method=DELETE" method="POST">
+      <div class="form-group">
+        <label>Are you sure you want to delete this chat?</label>
+      </div>
+      <button type="submit">Yes, Delete</button>
+    </form>
+
+    <a href="/chats">← Go Back</a>
+  </div>
+</body>
+</html>
