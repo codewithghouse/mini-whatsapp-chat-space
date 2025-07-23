@@ -71,7 +71,8 @@ Now visit 👉 http://localhost:3000/chats
 ✅ View Chat Timestamps (created & updated)
 
 ## 📷 Screenshots
-![alt text](<Screenshot (1).png>)
+<img width="1920" height="1080" alt="Screenshot (1)" src="https://github.com/user-attachments/assets/a7ce7cbe-1e06-454f-abc6-98832f174a6c" />
+
 
 ## 🙏 Acknowledgements
 This project was inspired by learning Node.js & MongoDB.
