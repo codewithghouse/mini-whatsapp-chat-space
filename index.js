@@ -19,8 +19,8 @@ app.use(express.urlencoded({extended:true}));
 const methodOverride = require('method-override');
 
 app.use(methodOverride('_method'));
-const ExpressError = require("../utils/ExpressError.js");
-const asyncWrap = require("../utils/AsyncWrap.js");
+const ExpressError = require("./utils/ExpressError.js");
+const asyncWrap = require("./utils/AsyncWrap.js");
 
 
 // connecting to mongodb
