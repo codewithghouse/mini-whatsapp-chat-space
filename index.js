@@ -21,6 +21,8 @@ const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 const ExpressError = require("./utils/ExpressError.js");
 const asyncWrap = require("./utils/AsyncWrap.js");
+// requiring the handlevalidationerror
+const handleValidationError= require("./utils/handleValidator.js");
 
 
 // connecting to mongodb
@@ -115,7 +117,7 @@ app.get("/chats/:id", asyncWrap((async (req, res, next) => {
     const { id } = req.params;
   const chat = await Chat.findById(id);
   if (!chat){ 
-    return next(new ExpressError(404, "Chat not found"))
+    return next(new ExpressError(404, "Chat not found"));
   };
   res.render("show.ejs", { chat });
     //agar koe bhi error ayega mongoose ka ya phir aysnc function ka to error dono way me call honge and epress bydefualt error thorew karega
@@ -179,7 +181,15 @@ app.delete("/chats/:id",(async(req,res,next)=>{
     
    }
 }))
-
+// middlw ware for our mongoose error js
+app.use((err,req,res,next)=>{
+  console.log(err.name);
+  console.dir(err.message);
+  if(err.name==="ValidationError"){
+   err =  handleValidationError(err);
+  }
+  return next(err);
+})
 
 //defining the custom error handler middlware 
 app.use((err,req,res,next)=>{
